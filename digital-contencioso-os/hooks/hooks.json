@@ -1,0 +1,38 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'digital-contencioso-os carregado — entrega aprovada = entrega-verificada/<sessão>/ENTREGA-vN.md com recibo aceito por emitir-entrega verificar; selo ou entrega no chat nunca é entrega; minutas sujeitas à revisão do advogado'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v python3 >/dev/null 2>&1 && python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/emitir-entrega.py\" stop || echo '{\"systemMessage\":\"gate não executou — nenhuma entrega aprovada será emitida\"}'",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit|Bash|Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v python3 >/dev/null 2>&1 && python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/emitir-entrega.py\" pretool || true",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
