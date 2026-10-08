@@ -1,63 +1,69 @@
 ---
 name: dados-pessoais-controversia
-description: "Controvérsia titular × controlador fora de relação de consumo: requerimento ao controlador por qualquer direito do art. 18 da LGPD (prazo só para confirmação/acesso), petição de titular × denúncia à ANPD com prova da tentativa prévia, e estratégia contenciosa; não faz política, RIPD nem compliance."
+description: "Conflito concreto sobre dados pessoais entre titular e controlador ou operador, para qualquer polo: requerimento de direito do art. 18 da LGPD (prazo só para confirmação/acesso), resposta do controlador, encaminhamento do operador e BLOCO MATERIAL da reparação ou da defesa; ANPD vai às skills via-administrativa-anpd-*; adequação, políticas, RIPD, encarregado, contratos e incidente sem conflito vão às lgpd-*."
 ---
 
-# Dados pessoais — titular × controlador
+# Dados pessoais — titular, controlador e operador
 
-**Guidance only:** fora de consumo. Compliance, política de privacidade, RIPD e incidente do próprio cliente ⇒ `FORA DO RECORTE` (`ia-combativa-adv-os`). Relação de consumo ⇒ `consumidor-adv-os`. Toda saída passa por `anti-alucinacao-digital-contencioso` → `validador-digital-contencioso` → `suprema-corte-digital-contencioso` (ver Fechamento).
+**Guidance only:** esta frente cobre o **conflito concreto** com o titular (requerimento, resposta, reparação ou defesa) e devolve o **BLOCO MATERIAL** (§6); não redige peça processual (a peça vai à skill de fase, §4). Sem conflito instaurado (preventivo) ⇒ `lgpd-*` (§7). Procedimento na ANPD ([NAT-LGPD-55A]) ⇒ `via-administrativa-anpd-titular` (petição de titular, denúncia, terceiro interessado) ou `via-administrativa-anpd-regulado` (fiscalizado, investigado, autuado, sancionado). Polo confirmado antes (`triagem-digital-contencioso`); titular é pessoa natural ([LGPD-5]), PJ não vira titular. Fonte única: `context/` (ver `context/INDICE.md`).
+
+## Guard mínimo
+
+Norma, tema e prazo só com `[ID]` (sem `[ID]` ⇒ `PENDENTE DE FONTE` na linha) · IP identifica terminal, não pessoa · hash declarado ≠ verificado · sem promessa de resultado · um caso = um cliente = um polo · ao final, acionar `revisao-final-digital`.
+
+**Saída da frente:** portão antes: polo ausente ou contraditório ⇒ só as perguntas, mesmo se mandarem não perguntar; com polo, sempre o BLOCO MATERIAL, mesmo com dado faltante (vira pendência; nunca minuta estrutural nem recusa) · estado só um dos 5; envio, urgência e posição vão a Pendências sem estado · dado ausente ⇒ `[CAMPO — PENDENTE DE PROVA]`, data ⇒ `[DATA — PENDENTE DE PROVA]` · Tema 987/533 em qualquer linha só com `[ID]` + rótulo de fonte parcial; a abertura não conclui o regime · frente não rodada não é `PENDENTE DE FONTE`.
 
 ## 1. Entrada
 
-Quem é o titular (o cliente) e quem é o controlador (agente que decide o tratamento); qual relação existe entre eles (se for de consumo, rotear); o que o titular quer (confirmação, acesso, correção, eliminação, portabilidade, informação sobre compartilhamento, revisão de decisão automatizada); pedidos já feitos ao controlador (canal, data, protocolo, conteúdo) e resposta recebida; porte do controlador, se houver indício de pequeno porte; dano alegado e prova. **Data de avaliação:** a informada no caso; sem ela, perguntar (não presumir a de hoje).
+Polo (titular `ATIVO`; controlador ou operador `PASSIVO`/réu); titular e controlador (quem decide o tratamento); relação entre eles (consumo ⇒ §4); direito pedido (lista do §2); pedidos já feitos ao controlador (canal, data, protocolo, conteúdo) e resposta; indício de pequeno porte; dano alegado e prova. **Data de avaliação:** a do caso; sem ela, perguntar (nunca presumir a de hoje). Ler a seção "Andamento" do `00-perfil-do-caso.md`.
 
-## 2. Etapa 1 — requerimento ao controlador (minuta, qualquer direito do art. 18)
+## 2. Titular (ATIVO) — requerimento ao controlador (qualquer direito do art. 18)
 
-- **A minuta sai em rascunho para qualquer direito do art. 18**: confirmação, acesso, correção, anonimização/bloqueio/eliminação, portabilidade, eliminação de dados tratados com consentimento, informação sobre compartilhamento, informação sobre não consentir, revogação (`context/lgpd-lei-13709.md` [LGPD-18], incisos I–IX); revisão de decisões tomadas unicamente com base em tratamento automatizado ([LGPD-20]).
-- Requerimento expresso do titular ou de representante legalmente constituído; se não puder adotar a providência de imediato, o controlador responde informando que não é agente de tratamento ou as razões que impedem; atendimento sem custo, **nos prazos e termos previstos em regulamento** ([LGPD-18], §§ 3º–5º).
+- **Minuta em rascunho para qualquer direito do art. 18**: confirmação, acesso, correção, anonimização/bloqueio/eliminação, portabilidade, eliminação de dados tratados com consentimento, informação sobre compartilhamento, informação sobre não consentir, revogação (`context/lgpd-lei-13709.md` [LGPD-18], incisos I–IX); revisão de decisões tomadas unicamente com base em tratamento automatizado ([LGPD-20]).
+- Requerimento expresso do titular ou de representante legalmente constituído; sem providência imediata, o controlador informa que não é agente de tratamento ou as razões que impedem; atendimento sem custo, **nos prazos e termos previstos em regulamento** ([LGPD-18], §§ 3º–5º).
 - **Prazo só para confirmação ou acesso** ([LGPD-19]): formato simplificado imediatamente, ou declaração clara e completa em até 15 dias do requerimento; a ANPD pode dispor de forma diferenciada por setor (§ 4º).
-- **Prazo dos demais direitos do art. 18** (correção, eliminação, portabilidade etc.): `PENDENTE DE FONTE`, **sem número**. Minuta em rascunho; prazo pendente. Nenhum desses requerimentos fica `BLOQUEADO` por relógio de 15 dias.
-- **Agente de pequeno porte** (`context/anpd-res-cd-2-2022-pequeno-porte.md`): prazo em dobro **só** para a declaração completa do art. 19, II, **sem converter em número** ([ANPD-R2-14], inciso III); declaração simplificada do art. 19, I em até quinze dias ([ANPD-R2-15]); no atendimento das solicitações do art. 18 o dobro vem "nos termos de regulamentação específica" (inciso I) ⇒ prazo `PENDENTE DE FONTE`.
-- **Canal com o encarregado:** o agente deve assegurar aos titulares meios céleres, eficazes e adequados de comunicação com o encarregado e de exercício de direitos (`context/anpd-res-cd-18-2024-encarregado.md` [ANPD-R18-10], inciso IV); o bloco **não fixa prazo de resposta**.
-- Dados do exercício regular de direitos não podem ser usados em prejuízo do titular ([LGPD-21-22], art. 21).
-- **Direitos não são absolutos** (ex.: obrigação legal de guarda) — orientação da ANPD ([ANPD-PETICAO], página de orientação, não norma).
+- **Prazo dos demais direitos do art. 18**: `PENDENTE DE FONTE`, **sem número**; a minuta segue e nenhum fica `BLOQUEADO` por relógio de 15 dias.
+- **Agente de pequeno porte:** prazo em dobro **só** para a declaração completa do art. 19, II, **sem converter em número** ([ANPD-R2-14], inciso III); declaração simplificada do art. 19, I em até quinze dias ([ANPD-R2-15]); no atendimento das solicitações do art. 18 o dobro vem "nos termos de regulamentação específica" (inciso I) ⇒ prazo `PENDENTE DE FONTE`.
+- **Canal com o encarregado:** meios céleres, eficazes e adequados de comunicação e de exercício de direitos ([ANPD-R18-10], inciso IV), **sem prazo de resposta fixado**.
+- Dados do exercício regular de direitos não se usam em prejuízo do titular ([LGPD-21-22], art. 21).
+- **Direitos não são absolutos** (ex.: obrigação legal de guarda) — orientação da ANPD ([ANPD-PETICAO], não norma).
 
-Corpo: template §1; lei nomeada e IDs auditáveis mantidos. Só notas de produção/rascunho saem. Sem transformação pós-selo.
+Minuta (ato extrajudicial; lei nomeada e `[ID]` em cada fundamento): identificação do titular (mínimo necessário), direito exercido por inciso, dados abrangidos, canal (inclusive o do encarregado), pedido de protocolo; orientar o cliente a **guardar protocolo, data e resposta**.
 
-Minuta: identificação do titular (mínimo necessário), direito exercido por inciso, dados abrangidos, canal (inclusive o do encarregado), pedido de protocolo. Orientar o cliente a **guardar protocolo, data e resposta**.
+## 3. Controlador ou operador (PASSIVO) — resposta ao titular
 
-## 3. Etapa 2 — ANPD: petição de titular × denúncia
+- **Controlador** responde o requerimento: identificar o direito pedido e, sem atendimento imediato, responder como no §2: não é agente de tratamento (indicando, se possível, quem é) ou razões de fato ou de direito que impedem ([LGPD-18], §§ 3º–5º). Prazos como no §2 ([LGPD-19]).
+- **Operador:** trata segundo as instruções do controlador e mantém registro ([LGPD-5], [LGPD-37-39]); recebido o pedido ⇒ minuta de encaminhamento ao controlador e resposta ao titular indicando-o; não decide o mérito por ele.
+- Limites: direitos não absolutos (§2); recusa sem razão documentada não se sustenta. Responder não é confessar dano nem infração.
 
-| | Petição de titular | Denúncia |
-|---|---|---|
-| Quem | o próprio titular | qualquer pessoa, natural ou jurídica |
-| Objeto | solicitação ao controlador **não solucionada** no prazo estabelecido em regulamentação | suposta infração à legislação de proteção de dados que não seja petição de titular |
-| Requisito | comprovação de submissão prévia ao controlador e de não solução no prazo regulamentar; **autodeclaração** admitida quando não houver outro meio ([ANPD-R1-25], § 1º) | fato certo; § 3º: denúncia anônima é recebida e processada quando verificada a verossimilhança e se a identificação não for necessária ([ANPD-R1-25]) |
-| Fonte | [LGPD-55J-V]; `context/anpd-res-cd-1-2021.md` [ANPD-R1-DEF] (art. 4º, III e V); `context/anpd-titular-de-dados.md` [ANPD-TITULAR] | [ANPD-R1-DEF], [ANPD-TITULAR] |
+**Prazo na resposta:** recebimento pelo canal não é a data do requerimento; sem prova da data, não contar prazo. Porte e dobra só com prova; sem ela, item próprio `PENDENTE DE PROVA`, sem título que afirme enquadramento.
 
-- **Competências separadas:** o **controlador** atende o requerimento do art. 18; a **ANPD** fiscaliza e aplica sanções por processo administrativo ([LGPD-55J-IV]) e aprecia petição de titular após reclamação ao controlador não solucionada no prazo regulamentar ([LGPD-55J-V]). Nenhum bloco capturado a torna competente para condenar a indenizar.
-- **Admissibilidade** (competência da ANPD, identificação ou anonimato cabível, legitimidade, agente de tratamento identificado, fato certo): [ANPD-R1-25], caput, incisos I–V. A comprovação do pedido prévio é exigência **da petição de titular** (§ 1º); a denúncia **não herda** essa espera. Denúncia sem fato certo ou prova da infração ⇒ item `PENDENTE DE PROVA` (pedir fato e prova); **nunca** vira petição de titular por definição nem recebe o prazo ou a prematuridade da petição.
-- **Petição prematura:** se, na data de avaliação, o prazo do art. 19, II ainda não correu, a petição de titular sobre a declaração completa é **prematura** (`BLOQUEADO` só para esse item); a confirmação simplificada já entregue é **outro pedido**; ver §6 sobre estado por item.
-- **Anonimato:** a ANPD informa que **não aceita petição de titular anônima** — isso é **orientação** ([ANPD-PETICAO]), não o caput do art. 25. Para a denúncia vale o § 3º do art. 25 ([ANPD-R1-25]). A identificação do denunciante pode ser tratada como informação pessoal com acesso restrito (§ 4º).
-- **Análise agregada:** os requerimentos são analisados de forma agregada, com providências padronizadas; a análise individualizada é excepcional e motivada ([ANPD-R1-26]). Sem promessa de decisão individual.
-- **Prazo regulamentar do controlador: não afirmado.** A agenda regulatória listava a regulamentação dos arts. 9º, 18, 19 e 20 como iniciativa de Fase 1, e o índice capturado em 02/10/2026 não mostra resolução específica ([ANPD-AGENDA]; [ANPD-INDICE]) — indício, não prova de ausência (B7/L05). Se a contagem do prazo for decisiva ⇒ `PENDENTE DE FONTE`.
+Minuta de resposta (ato extrajudicial): identificação do requerimento (data, canal, protocolo), direito pedido, providência adotada ou razão que impede, dados abrangidos, canal do encarregado, data da resposta. Sem promessa de arquivamento de reclamação futura.
 
-## 4. Etapa 3 — estratégia contenciosa
+## 4. Via judicial — conteúdo material do BLOCO (titular autor ou controlador/operador réu)
 
 - Defesa em juízo, individual ou coletiva ([LGPD-21-22], art. 22).
-- Reparação por dano patrimonial ou moral em violação à legislação de proteção de dados; solidariedade **condicionada**: o operador responde solidariamente **quando** descumprir a legislação de proteção de dados ou não seguir as instruções lícitas do controlador (art. 42, § 1º, I), e os controladores **diretamente envolvidos** no tratamento que causou o dano respondem solidariamente (§ 1º, II), em ambos os casos salvo as exclusões do art. 43; inversão do ônus a critério do juiz; excludentes do art. 43; tratamento irregular do art. 44 ([LGPD-42-45]).
-- **Recusa ou atraso do controlador não presume dano nem defeito.** Minuta de pedido, inclusive de tutela, é advocacia revisável, não decisão nem promessa de resultado: exige fatos, `[ID]` e os controles visíveis. Tutela e pedidos delimitados por direito e por dado: `tutela-e-pedidos-delimitados-digital`.
-- Relação de consumo ⇒ regras próprias (art. 45) ⇒ `consumidor-adv-os`.
-- Registros de conexão/acesso (IP) seguem regime próprio do Marco Civil ⇒ `registros-exibicao-e-fornecimento`.
+- Reparação por dano patrimonial ou moral em violação à legislação de proteção de dados; solidariedade **condicionada**: respondem solidariamente o operador quando descumprir as obrigações da legislação de proteção de dados ou não tiver seguido as instruções lícitas do controlador, equiparando-se ao controlador (art. 42, § 1º, I) e os controladores **diretamente envolvidos** no tratamento que causou o dano (§ 1º, II), salvo, nos dois casos, as exclusões do art. 43; inversão do ônus a critério do juiz; tratamento irregular do art. 44 ([LGPD-42-45]).
+- **Recusa ou atraso do controlador não presume dano nem defeito.** Pedido (inclusive tutela) é advocacia revisável: exige fatos e `[ID]`, sem promessa de resultado.
+- **Controlador ou operador réu (PASSIVO/J):** defesa pelas excludentes do art. 43 (não realizou o tratamento; tratamento sem violação; culpa exclusiva do titular ou de terceiro) e contra o enquadramento de irregularidade do art. 44 ([LGPD-42-45]); solidariedade só nas hipóteses do bullet acima.
+- **Relação de consumo:** responsabilidade pela legislação pertinente ([LGPD-42-45], art. 45); no item 3 do BLOCO, consumidor e fornecedor ([CDC-2], [CDC-3]) e fato do serviço ([CDC-14]).
+- Registros de conexão/acesso (IP): regime próprio do Marco Civil ⇒ `registros-exibicao-e-fornecimento`.
+- **Peça (a frente não redige):** ajuizar ⇒ `peticao-inicial-digital`; tutela e pedidos por direito e por dado ⇒ `tutela-e-pedidos-delimitados-digital`; réu ⇒ `contestacao-e-defesa-digital`, que fixa forma, prazo e rito; recurso e cumprimento ⇒ skill de fase da decisão. Ação contra ato da ANPD ⇒ `controle-judicial-ato-administrativo`.
 
 ## 5. Travas e rejeições
 
-Não produzir política, RIPD, mapeamento ou plano de adequação. **Rejeitar com motivo:** "30 ou 15 dias para todos os direitos" (o art. 19 vale só para confirmação/acesso); "o art. 25 veda petição anônima" (o caput lista requisitos; a vedação é orientação da ANPD); "peça à ANPD que condene, remova ou indenize" — nenhum bloco capturado atribui à ANPD condenar indenização individual; o pedido de indenização sai da ANPD (item `BLOQUEADO`, sem competência no corpus), e a reparação segue ao Judiciário (`context/cf-recortes.md` [CF-5-XXXV]) sem prometer resultado; "a via administrativa suspende ou dispensa a judicial" ⇒ `PENDENTE DE FONTE`. Prazo de **mérito** da ANPD, ou de lei geral do processo administrativo usada como prazo de mérito, não é afirmado (nenhuma está no `context/`) ⇒ `PENDENTE DE FONTE`. Não tratar página de orientação da ANPD como norma (selo 🟡). Não citar decisão individual da ANPD (não capturada). Sem pedido lícito restante (único pedido = premissa contradita, nenhum direito do art. 18 indicado) ⇒ estado final `BLOQUEADO` com o motivo; sem trecho substituto, "requer-se", modelo em branco nem direito do art. 18 não pedido. Premissa expressa que o texto capturado contradiz ("o art. 42 é competência judicial" — o caput trata do dever de reparar, [LGPD-42-45]) ⇒ **só esse item** `BLOQUEADO` com o motivo, nunca `PENDENTE DE FONTE`; via correta e recurso factual seguem. Minimizar dados do titular e de terceiros na minuta.
+**Rejeitar com motivo:** "30 ou 15 dias para todos os direitos" (o art. 19 vale só para confirmação/acesso); "o art. 25 veda petição anônima" (petição de titular anônima não é aceita — orientação, [ANPD-PETICAO]; denúncia anônima segue o § 3º do art. 25 da Res. CD/ANPD 1/2021, [ANPD-R1-25]); "peça à ANPD que condene, remova ou indenize" — nenhum bloco atribui à ANPD indenização individual: esse item sai `BLOQUEADO` (sem competência no corpus) e a reparação segue ao Judiciário ([CF-5-XXXV]) sem prometer resultado; "a via administrativa suspende ou dispensa a judicial" ⇒ `PENDENTE DE FONTE`. Prazo do procedimento na ANPD não é afirmado aqui ⇒ `via-administrativa-anpd-titular` ou `via-administrativa-anpd-regulado`. Página de orientação da ANPD não é norma (selo 🟡); decisão individual da ANPD não se cita (não capturada). Sem pedido lícito restante (único pedido = premissa contradita, nenhum direito do art. 18 indicado) ⇒ estado final `BLOQUEADO` com o motivo; sem trecho substituto, "requer-se", modelo em branco nem direito do art. 18 não pedido. Premissa expressa que o texto capturado contradiz ("o art. 42 é competência judicial" — o caput trata do dever de reparar, [LGPD-42-45]) ⇒ **só esse item** `BLOQUEADO` com o motivo, nunca `PENDENTE DE FONTE`; via correta e recurso factual seguem. Minimizar dados do titular e de terceiros na minuta.
 
-## 6. Saída e estado
+## 6. BLOCO MATERIAL (saída) e estado
 
-Roteiro em 3 etapas + minuta do requerimento + quadro petição × denúncia aplicado ao caso + **Controles executados** + estado **por item** (um estado único não pode esconder um item bloqueado ou pendente): `MINUTA PARA REVISÃO HUMANA` · `PENDENTE DE PROVA` (sem prova do pedido prévio, da resposta ou do fato) · `PENDENTE DE FONTE` (prazo ou premissa normativa necessária; item dependente sem selo) · `BLOQUEADO` (item que a fonte não sustenta no momento, com o motivo) · `FORA DO RECORTE` (consumo; compliance).
+1. POLO — linha do `00-perfil-do-caso.md` (titular `ATIVO`; controlador ou operador `PASSIVO`).
+2. Fatos — requerimento, resposta ou silêncio, tratamento e dano, cada um com o item de prova e sua origem (data, canal, protocolo).
+3. Fundamentos — direito por inciso ([LGPD-18], [LGPD-20]), prazo só no literal ([LGPD-19]), reparação, solidariedade e excludentes ([LGPD-42-45]); relação de consumo com o CDC (§4).
+4. Pedidos — delimitados por direito exercido e por dado ou categoria abrangida; reparação só com dano alegado e prova.
+5. Pendências — por item, com estado (a rota ANPD ou `lgpd-*`, se houver, aparece aqui).
 
-## Fechamento comum (chamada direta ou por wrapper)
+Estado **por item**: `MINUTA PARA REVISÃO HUMANA` · `PENDENTE DE PROVA` (requerimento, resposta, porte ou fato sem prova) · `PENDENTE DE FONTE` (prazo ou premissa normativa necessária; dependente sem selo) · `BLOQUEADO` (fonte não sustenta, com motivo) · `FORA DO RECORTE` (matéria fora do plugin, com o destino da triagem), por matéria, nunca por polo.
 
-Se o pedido trouxer matéria de fronteira (consumo, fraude financeira, tipificação penal, LGPD de compliance, autoral, eleitoral, infância digital, cliente-plataforma), parar e devolver `FORA DO RECORTE` com o destino indicado pela `triagem-digital-contencioso`. Esta skill entrega `RASCUNHO vN` (itens `I1…In`); o estado final vem da revisão aplicada por agentes próprios (`templates/revisao-aplicada.md`) e a entrega aprovada só existe quando o gate do plugin grava `entrega-verificada/<sessão>/ENTREGA-vN.md`. Sem a cadeia: "revisão não executada", rascunho e rota para `/digital-contencioso-revisar`; nunca `MINUTA PARA REVISÃO HUMANA`.
+## 7. Sem conflito instaurado ⇒ LGPD consultiva (`lgpd-*`)
+
+Programa de adequação e diagnóstico ⇒ `lgpd-programa-de-adequacao` · política de privacidade, avisos, termos de uso e cookies ⇒ `lgpd-politicas-e-avisos` · relatório de impacto (RIPD) ⇒ `lgpd-ripd` · encarregado e governança ⇒ `lgpd-encarregado-e-governanca` · contrato controlador–operador e transferência internacional ⇒ `lgpd-contratos-de-tratamento` · incidente de segurança até a comunicação ⇒ `lgpd-incidente-de-seguranca` (instaurada fiscalização ou processo ⇒ `via-administrativa-anpd-regulado`).

@@ -56,3 +56,21 @@ ou fato, nas ações para reparação de dano de qualquer natureza.
 Parágrafo único. Em qualquer hipótese,
 poderá a ação ser proposta no foro previsto no inciso I deste artigo.
 ```
+
+## [JEC-30-31] Arts. 30 e 31 (contestação no Juizado; vedação da reconvenção; pedido contraposto)
+
+Localizador: `texto/lei-9099-jec.md` — linhas 426–436.
+
+```text
+Art. 30. A contestação, que será oral ou
+escrita, conterá toda matéria de defesa, exceto argüição de suspeição ou
+impedimento do Juiz, que se processará na forma da legislação em vigor.
+
+Art. 31. Não se admitirá a reconvenção. É
+lícito ao réu, na contestação, formular pedido em seu favor, nos limites do art. 3º
+desta Lei, desde que fundado nos mesmos fatos que constituem objeto da controvérsia.
+
+Parágrafo único. O autor poderá responder ao
+pedido do réu na própria audiência ou requerer a designação da nova data, que será
+desde logo fixada, cientes todos os presentes.
+```

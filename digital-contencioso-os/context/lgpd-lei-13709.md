@@ -6,7 +6,7 @@
 - sha256_raw: ff213ed7e02f9e607458fffe4655f135ee234efb1d74e1f9d012e939045059a9
 - sha256_corpo: 0bdb3ab3ea2777095bf9fcbe00aa696a9a759c6cd887f389bc247f572d84bece
 - origem: `texto/lei-13709-lgpd.md` do corpus capturado do projeto (numeração de linha do arquivo de texto)
-- estado da fonte: Texto do Planalto; o renderizador histórico marca com ~~ apenas <strike>/<s>/<del>, não o riscado por CSS (text-decoration:line-through). Os ranges dos arts. 1º, 3º, 4º e 5º foram confrontados com os parágrafos vigentes da captura primária na curadoria R13 e QA R14; redações riscadas por CSS excluídas pela seleção de ranges. Captura não certifica vigência posterior. Prazo do controlador para fins de petição à ANPD depende de regulamentação não localizada (B7/L05).
+- estado da fonte: Texto do Planalto; o renderizador histórico marca com ~~ apenas <strike>/<s>/<del>, não o riscado por CSS (text-decoration:line-through). Os ranges dos arts. 1º, 3º, 4º e 5º foram confrontados com os parágrafos vigentes da captura primária na curadoria e na revisão independente; redações riscadas por CSS excluídas pela seleção de ranges. Captura não certifica vigência posterior. Prazo do controlador para fins de petição à ANPD depende de regulamentação não localizada (B7/L05).
 - regra: somente excertos literais; rótulos são do plugin e não são texto normativo; nada aqui vem de memória.
 
 ---
@@ -319,4 +319,221 @@ Localizador: `texto/lei-13709-lgpd.md` — linhas 2034–2036.
 V - apreciar petições de titular contra controlador após comprovada pelo
 titular a apresentação de reclamação ao controlador não solucionada no prazo
 estabelecido em regulamentação;
+```
+
+## [LGPD-37-39] Arts. 37 a 39 (registro das operações; relatório de impacto por determinação da autoridade; operador segue instruções do controlador)
+
+Localizador: `texto/lei-13709-lgpd.md` — linhas 1030–1040.
+
+```text
+Art. 37. O controlador e o operador devem manter registro das operações de tratamento de dados pessoais que realizarem, especialmente quando baseado no legítimo interesse.
+
+Art. 38. A autoridade nacional poderá determinar ao controlador que elabore relatório de impacto à proteção de dados pessoais, inclusive de dados sensíveis, referente a suas operações de tratamento de dados, nos termos de regulamento, observados os segredos comercial e industrial.
+
+Parágrafo único. Observado o disposto no
+
+caput
+
+deste artigo, o relatório deverá conter, no mínimo, a descrição dos tipos de dados coletados, a metodologia utilizada para a coleta e para a garantia da segurança das informações e a análise do controlador com relação a medidas, salvaguardas e mecanismos de mitigação de risco adotados.
+
+Art. 39. O operador deverá realizar o tratamento segundo as instruções fornecidas pelo controlador, que verificará a observância das próprias instruções e das normas sobre a matéria.
+```
+
+## [LGPD-48] Art. 48, caput e §§ 1º–3º (comunicação de incidente de segurança pelo controlador; providências da autoridade)
+
+Localizador: `texto/lei-13709-lgpd.md` — linhas 1141–1163.
+
+```text
+Art. 48. O controlador deverá comunicar à autoridade nacional e ao titular a ocorrência de incidente de segurança que possa acarretar risco ou dano relevante aos titulares.
+
+§ 1º A comunicação será feita em prazo razoável, conforme definido pela autoridade nacional, e deverá mencionar, no mínimo:
+
+I - a descrição da natureza dos dados pessoais afetados;
+
+II - as informações sobre os titulares envolvidos;
+
+III - a indicação das medidas técnicas e de segurança utilizadas para a proteção dos dados, observados os segredos comercial e industrial;
+
+IV - os riscos relacionados ao incidente;
+
+V - os motivos da demora, no caso de a comunicação não ter sido imediata; e
+
+VI - as medidas que foram ou que serão adotadas para reverter ou mitigar os efeitos do prejuízo.
+
+§ 2º A autoridade nacional verificará a gravidade do incidente e poderá, caso necessário para a salvaguarda dos direitos dos titulares, determinar ao controlador a adoção de providências, tais como:
+
+I - ampla divulgação do fato em meios de comunicação; e
+
+II - medidas para reverter ou mitigar os efeitos do incidente.
+
+§ 3º No juízo de gravidade do incidente, será avaliada eventual comprovação de que foram adotadas medidas técnicas adequadas que tornem os dados pessoais afetados ininteligíveis, no âmbito e nos limites técnicos de seus serviços, para terceiros não autorizados a acessá-los.
+```
+
+## [LGPD-52] Art. 52 (sanções administrativas e critérios do § 1º; incisos X–XII e §§ 2º, 3º, 5º–7º nas redações da Lei 13.853/2019; versões riscadas e vetos promulgados excluídos)
+
+Localizador: `texto/lei-13709-lgpd.md` — linhas 1213–1232, 1254–1293, 1297–1300, 1322–1347, 1357–1387.
+
+```text
+Art. 52. Os agentes de tratamento de dados, em razão das infrações cometidas às normas previstas nesta Lei, ficam sujeitos às seguintes sanções administrativas aplicáveis pela autoridade nacional:
+(Vigência)
+
+I - advertência, com indicação de prazo para adoção de medidas corretivas;
+
+II - multa simples, de até 2% (dois por cento) do faturamento da pessoa jurídica de direito privado, grupo ou conglomerado no Brasil no seu último exercício, excluídos os tributos, limitada, no total, a R$ 50.000.000,00 (cinquenta milhões de reais) por infração;
+
+III - multa diária, observado o limite total a que se refere o inciso II;
+
+IV - publicização da infração após devidamente apurada e confirmada a sua ocorrência;
+
+V - bloqueio dos dados pessoais a que se refere a infração até a sua regularização;
+
+VI - eliminação dos dados pessoais a que se refere a infração;
+
+VII - (VETADO);
+
+VIII - (VETADO);
+
+IX - (VETADO).
+[…]
+X - suspensão
+parcial do funcionamento do banco de dados a que se refere a infração pelo
+período máximo de 6 (seis) meses, prorrogável por igual período, até a
+regularização da atividade de tratamento pelo controlador;
+(Incluído pela Lei nº 13.853, de 2019)
+
+XI - suspensão
+do exercício da atividade de tratamento dos dados pessoais a que se refere a
+infração pelo período máximo de 6 (seis) meses, prorrogável por igual
+período;
+(Incluído pela Lei nº 13.853, de 2019)
+
+XII -
+proibição parcial ou total do exercício de atividades relacionadas a
+tratamento de dados.
+(Incluído pela Lei nº 13.853, de 2019)
+
+§ 1º As sanções serão aplicadas após procedimento administrativo que possibilite a oportunidade da ampla defesa, de forma gradativa, isolada ou cumulativa, de acordo com as peculiaridades do caso concreto e considerados os seguintes parâmetros e critérios:
+
+I - a gravidade e a natureza das infrações e dos direitos pessoais afetados;
+
+II - a boa-fé do infrator;
+
+III - a vantagem auferida ou pretendida pelo infrator;
+
+IV - a condição econômica do infrator;
+
+V - a reincidência;
+
+VI - o grau do dano;
+
+VII - a cooperação do infrator;
+
+VIII - a adoção reiterada e demonstrada de mecanismos e procedimentos internos capazes de minimizar o dano, voltados ao tratamento seguro e adequado de dados, em consonância com o disposto no inciso II do § 2º do art. 48 desta Lei;
+
+IX - a adoção de política de boas práticas e governança;
+
+X - a pronta adoção de medidas corretivas; e
+
+XI - a proporcionalidade entre a gravidade da falta e a intensidade da sanção.
+[…]
+§ 2º O disposto neste artigo não substitui a aplicação de sanções
+administrativas, civis ou penais definidas na Lei nº 8.078, de 11 de
+setembro de 1990, e em legislação específica. (Redação dada pela
+Lei nº 13.853, de 2019)
+[…]
+§ 3º O
+disposto nos incisos I, IV, V, VI, X, XI e XII do caput deste artigo
+poderá ser aplicado às entidades e aos órgãos públicos, sem prejuízo do
+disposto na
+
+Lei nº 8.112, de 11 de dezembro de 1990, na
+
+Lei nº 8.429, de 2 de junho de 1992, e na
+
+Lei nº 12.527, de 18 de novembro de 2011.
+
+(Redação
+dada pela Lei nº 13.853, de 2019)
+
+§ 4º No cálculo do valor da multa de que trata o inciso II do
+
+caput
+
+deste artigo, a autoridade nacional poderá considerar o faturamento total da empresa ou grupo de empresas, quando não dispuser do valor do faturamento no ramo de atividade empresarial em que ocorreu a infração, definido pela autoridade nacional, ou quando o valor for apresentado de forma incompleta ou não for demonstrado de forma inequívoca e idônea.
+
+§ 5º O produto da arrecadação das multas aplicadas pela ANPD, inscritas
+ou não em dívida ativa, será destinado ao Fundo de Defesa de Direitos
+Difusos de que tratam o art. 13 da Lei nº 7.347, de 24 de julho de 1985,
+e a Lei nº 9.008, de 21 de março de 1995.
+(Incluído pela
+Lei nº 13.853, de 2019)
+[…]
+§ 6º As
+sanções previstas nos incisos X, XI e XII do caput deste artigo
+serão aplicadas:
+
+(Incluído pela
+Lei nº 13.853, de 2019)
+
+I - somente
+após já ter sido imposta ao menos 1 (uma) das sanções de que tratam os
+incisos II, III, IV, V e VI do caput deste artigo para o mesmo
+caso concreto; e
+
+(Incluído pela
+Lei nº 13.853, de 2019)
+
+II - em caso
+de controladores submetidos a outros órgãos e entidades com competências
+sancionatórias, ouvidos esses órgãos.
+
+(Incluído pela
+Lei nº 13.853, de 2019)
+
+§ 7º Os vazamentos individuais ou os acessos não autorizados de que
+trata o
+
+caput do art. 46 desta Lei poderão ser objeto de conciliação
+direta entre controlador e titular e, caso não haja acordo, o
+controlador estará sujeito à aplicação das penalidades de que trata este
+artigo.
+(Incluído pela
+Lei nº 13.853, de 2019)
+```
+
+## [LGPD-53-54] Arts. 53 e 54 (metodologia de dosimetria por regulamento; multa diária)
+
+Localizador: `texto/lei-13709-lgpd.md` — linhas 1391–1407.
+
+```text
+Art. 53. A autoridade nacional definirá, por meio de regulamento próprio sobre sanções administrativas a infrações a esta Lei, que deverá ser objeto de consulta pública, as metodologias que orientarão o cálculo do valor-base das sanções de multa.
+
+(Vigência)
+
+§ 1º As metodologias a que se refere o
+
+caput
+
+deste artigo devem ser previamente publicadas, para ciência dos agentes de tratamento, e devem apresentar objetivamente as formas e dosimetrias para o cálculo do valor-base das sanções de multa, que deverão conter fundamentação detalhada de todos os seus elementos, demonstrando a observância dos critérios previstos nesta Lei.
+
+§ 2º O regulamento de sanções e metodologias correspondentes deve estabelecer as circunstâncias e as condições para a adoção de multa simples ou diária.
+
+Art. 54. O valor da sanção de multa diária aplicável às infrações a esta Lei deve observar a gravidade da falta e a extensão do dano ou prejuízo causado e ser fundamentado pela autoridade nacional.
+
+Parágrafo único. A intimação da sanção de multa diária deverá conter, no mínimo, a descrição da obrigação imposta, o prazo razoável e estipulado pelo órgão para o seu cumprimento e o valor da multa diária a ser aplicada pelo seu descumprimento.
+
+(Vigência)
+```
+
+## [LGPD-55J-XVII] Art. 55-J, XVII (compromisso com agentes de tratamento em processos administrativos)
+
+Localizador: `texto/lei-13709-lgpd.md` — linhas 2108–2113.
+
+```text
+XVII - celebrar, a qualquer momento, compromisso com agentes de tratamento
+para eliminar irregularidade, incerteza jurídica ou situação contenciosa no
+âmbito de processos administrativos, de acordo com o previsto no Decreto-Lei
+nº 4.657, de 4 de setembro de 1942;
+(Incluído pela
+Lei nº 13.853, de 2019)
 ```

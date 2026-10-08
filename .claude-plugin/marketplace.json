@@ -1,18 +1,19 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "digital-contencioso-os-marketplace",
-  "description": "Digital — Contencioso e Administrativo. Candidato para homologação; validação no Cowork e liberação comercial pendentes.",
+  "description": "Digital — Contencioso, Administrativo e LGPD. Plugin de apoio ao advogado de qualquer polo em caso digital, nas vias judicial, administrativa e extrajudicial, e na LGPD consultiva.",
   "owner": {
-    "name": "IA Combativa"
+    "name": "Sbroggio Advocacia & IA Combativa"
   },
   "plugins": [
     {
       "name": "digital-contencioso-os",
       "source": "./digital-contencioso-os",
-      "description": "Digital — Contencioso e Administrativo. Apoio ao advogado da pessoa ou empresa afetada em conta, conteúdo, registros, dados pessoais e cumprimento de ordem no ambiente digital, com prova de origem, fonte capturada e revisão humana.",
+      "description": "Digital — Contencioso, Administrativo e LGPD. Apoio ao advogado de qualquer polo em caso digital (pessoa ou empresa afetada, plataforma, provedor, controlador ou operador, autor do conteúdo), da triagem ao cumprimento: fase administrativa (ANPD, Anatel, Ministério Público, domínio .br) e fase judicial completa (inicial, tutela, contestação, réplica, recursos, cumprimento), em conta, conteúdo, registros, dados pessoais e termos de plataforma, mais LGPD consultiva (adequação, políticas, RIPD, encarregado, contratos, incidente). Minutas com fonte capturada e revisão do advogado.",
       "author": {
-        "name": "IA Combativa"
-      }
+        "name": "Sbroggio Advocacia & IA Combativa"
+      },
+      "version": "0.3.0"
     }
   ]
 }

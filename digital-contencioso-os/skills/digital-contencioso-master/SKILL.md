@@ -1,70 +1,91 @@
 ---
 name: digital-contencioso-master
-description: "Orquestra o caso digital da pessoa ou empresa afetada: triagem de fronteira, cronologia única, módulo de prova, percurso (conta, conteúdo, registros, dados, cumprimento) e revisão integral por guard, validador e R1–R4 antes de qualquer entrega."
+description: "Porta única do caso digital, para qualquer polo e fase: lê o mapa metodológico, confirma o polo, aciona a triagem e despacha à skill de prova, frente, LGPD consultiva, extrajudicial, administrativa (ANPD, Anatel, MP, SACI-Adm), controle judicial ou fase judicial; fecha pela revisão final."
 ---
 
 # Master — Digital Contencioso OS
 
-**Guidance only:** mencionar os controles não prova que rodaram. Cada controle só conta como **agente próprio** (ferramenta Agent) cujo **retorno** traga o bloco `CONTROLE … · VERSÃO N` aplicado ao caso: ler ou aplicar os procedimentos na mesma resposta, carga de skill ou matriz escrita depois pelo mesmo modelo não é revisão. Sem esse retorno (ou sem a ferramenta Agent), escrever **"revisão não executada"** e não apor `MINUTA PARA REVISÃO HUMANA` em nenhum item; mapa factual e pendências podem sair como **RASCUNHO, NÃO É ENTREGA APROVADA**. **Entrega aprovada = `entrega-verificada/<sessão>/ENTREGA-vN.md` + recibo, gravados pelo gate do plugin** (verificação estrutural, não revisão jurídica independente); selo no chat nunca é entrega.
+**Guidance only:** o master conduz e despacha; não redige a peça de outra skill nem faz a revisão no lugar da `revisao-final-digital`. Antes de tudo, ler `context/metodologia-digital.md` (regra de leitura, camadas, árvore polo → matéria → fase → via, fronteiras e estados finais).
 
 ## 1. Entrada
 
-Objetivo do cliente; quem é o cliente (pessoa natural ou empresa) e o advogado; plataforma, provedor ou controlador envolvido; o que aconteceu e quando; o que já foi tentado (contestação interna, notificação, pedido ao controlador, ação, decisão); provas existentes **e como foram obtidas** (quem capturou, quando, de onde); termos da plataforma colados, se houver; pasta privada do caso (`/digital-contencioso-install`). Não pedir de novo dado já provado no caso.
+Objetivo; natureza (N1–N7), posição (`ATIVO` · `PASSIVO` · `REGULADO` com fase · `TERCEIRO`) e parte adversa; plataforma, agente ou autoridade; o que aconteceu e quando; o que já foi feito (canal interno, notificação, requerimento, procedimento, ação, decisão); provas e origem; termos colados; pasta privada do caso (`/digital-contencioso-install`). Não repedir dado provado.
 
-## 2. Percurso obrigatório
+## 2. Percurso
 
-`triagem-digital-contencioso` → `origem-e-cronologia-da-prova-digital` (sempre que houver prova digital) → produtora do percurso (`RASCUNHO v1`, itens `I1…In`) → **revisão aplicada** de `templates/revisao-aplicada.md`: agentes `anti-alucinacao-digital-contencioso` → `validador-digital-contencioso` → `suprema-corte-digital-contencioso` (R1→R4), um por vez, cada um com os retornos anteriores literais; achados aplicados em nova versão e cadeia inteira de novo (máx. 3 versões) → bloco final `REVISÃO APLICADA · VERSÃO N`.
+1. **Polo antes do remédio:** polo, fase (se `REGULADO`) e fatos essenciais dados no pedido ou no documento ⇒ seguir. Polo ausente ou contraditório ⇒ só a pergunta de polo, mesmo que o pedido diga para não perguntar; nunca peça do polo oposto ao declarado.
+2. `triagem-digital-contencioso` sempre, mesmo com polo no pedido → polo, conflito, matéria, **fase do processo ou do procedimento** e matriz de via; grava o `00-perfil-do-caso.md` com "Andamento".
+3. Prova digital no caso ⇒ `origem-e-cronologia-da-prova-digital` antes da produtora.
+4. Polo definido e frente de direito material ⇒ BLOCO MATERIAL antes da skill da fase; objeto da ação desconhecido ⇒ perguntar o objeto, sem razões nem mérito.
+5. Ao final, `revisao-final-digital` sobre a versão final da entrega inteira.
 
-- **Cronologia única:** uma linha do tempo por caso (data · evento · prova · origem · fonte normativa), atualizada a cada produtora; nunca duas versões dos fatos.
-- Ler a skill de destino **antes** de usá-la e confirmar que ela existe no plugin. Se a produtora faltar, entregar mapa de pendências e dizer qual skill falta; **nunca** redigir a peça no lugar dela.
-- Os controles revisam a **entrega inteira** (minuta, tabela, notificação ou mapa de pendências), uma vez, sobre a saída consolidada. Chamada direta de produtora e wrapper aplicam a mesma cadeia.
+Ler a skill de destino antes de usá-la; ausente, mapa de pendências dizendo qual falta. Conferir a coerência entre "Andamento" e o ato pedido (fase, decisão, prazo literal com `[ID]`).
 
-## 3. Rotas
+## 3. Rotas (uma linha por skill)
 
-| Objeto do pedido | Skill |
+| Quando | Skill |
 |---|---|
-| Fronteira, polo, percurso | `triagem-digital-contencioso` |
-| Quem pode pedir, contra quem, onde | `legitimidade-e-competencia-digital` |
-| Inventário de prova, origem, datas | `origem-e-cronologia-da-prova-digital` |
-| Fato × prova × dano | `matriz-fato-prova-dano-digital` |
-| Prova frágil; ata notarial; perícia; produção antecipada | `preservacao-e-encaminhamento-probatorio` |
-| Termos da plataforma e canais internos | `termos-da-plataforma-e-remedios` |
-| Conta/perfil suspenso ou encerrado | `conta-perfil-suspensao` |
-| Conteúdo de terceiro, honra, reputação | `conteudo-reputacao-remocao` |
-| Registros de conexão/acesso, IP, porta lógica, autoria incerta | `registros-exibicao-e-fornecimento` |
-| Titular × controlador (fora de consumo) | `dados-pessoais-controversia` |
-| Notificação extrajudicial | `notificacao-extrajudicial-digital` |
-| Tutela, pedidos delimitados, honorários | `tutela-e-pedidos-delimitados-digital` |
-| Ordem judicial já proferida × resposta | `cumprimento-de-ordem-digital` |
-| Regime de responsabilidade da plataforma (Temas 987/533) | **BLOQUEADA POR FONTE** → responder `PENDENTE DE FONTE` (ver §4) |
+| Configurar pasta privada e índice de casos | `digital-contencioso-install` |
+| Polo, conflito, matéria, fase, via | `triagem-digital-contencioso` |
+| Inventário de prova, origem, cronologia | `origem-e-cronologia-da-prova-digital` |
+| Fato × prova × dano × pedido | `matriz-fato-prova-dano-digital` |
+| Prova frágil: ata notarial, perícia, guarda, cabimento da produção antecipada | `preservacao-e-encaminhamento-probatorio` |
+| Termos colados da plataforma, canais internos | `termos-da-plataforma-e-remedios` |
+| Responsabilidade da plataforma por conteúdo de terceiro | `regime-plataformas-e-conteudo` |
+| Conta ou perfil suspenso, bloqueado, encerrado | `conta-perfil-suspensao` |
+| Conteúdo, honra, imagem, reputação | `conteudo-reputacao-remocao` |
+| Registros de conexão e de acesso (IP, porta, data e hora) | `registros-exibicao-e-fornecimento` |
+| Dados pessoais em conflito concreto (titular × controlador ou operador) | `dados-pessoais-controversia` |
+| Notificação enviada ou recebida | `notificacao-extrajudicial-digital` |
+| Diagnóstico e plano de adequação à LGPD (porta consultiva) | `lgpd-programa-de-adequacao` |
+| Política de privacidade, aviso, termos de uso, cookies | `lgpd-politicas-e-avisos` |
+| Relatório de impacto | `lgpd-ripd` |
+| Encarregado e programa de governança | `lgpd-encarregado-e-governanca` |
+| Contrato controlador–operador, transferência internacional | `lgpd-contratos-de-tratamento` |
+| Incidente de segurança até a comunicação | `lgpd-incidente-de-seguranca` |
+| ANPD: petição de titular, denúncia, terceiro interessado | `via-administrativa-anpd-titular` |
+| ANPD: fiscalizado, investigado, autuado, sancionado | `via-administrativa-anpd-regulado` |
+| Anatel: reclamação, fiscalização, Pado, recurso | `via-administrativa-anatel` |
+| Ministério Público: representação, requisição, inquérito civil, TAC | `ministerio-publico-inquerito-civil-tac` |
+| Disputa de nome de domínio `.br` no SACI-Adm | `saci-adm-dominio-br` |
+| Mandado de segurança ou anulatória contra ato da ANPD ou da Anatel | `controle-judicial-ato-administrativo` |
+| Legitimidade, foro, Juizado × comum × federal | `legitimidade-e-competencia-digital` |
+| Produção antecipada de prova autônoma | `producao-antecipada-de-prova-digital` |
+| Petição inicial, comum ou Juizado | `peticao-inicial-digital` |
+| Tutela provisória: pedir ou responder, antecedente | `tutela-e-pedidos-delimitados-digital` |
+| Contestação, reconvenção, pedido contraposto, revelia | `contestacao-e-defesa-digital` |
+| Réplica, saneamento, especificação de provas, audiência | `replica-saneamento-e-provas-digital` |
+| Sentença no rito comum: apelação ou contrarrazões | `apelacao-e-contrarrazoes-digital` |
+| Decisão interlocutória, agravo interno, embargos de declaração | `agravo-e-embargos-de-declaracao-digital` |
+| Sentença no Juizado: recurso inominado ou contrarrazões | `recurso-inominado-digital` |
+| Acórdão: REsp, RE, agravo em REsp/RE | `recursos-excepcionais-digital` |
+| Obrigação de fazer ou não fazer, astreintes | `cumprimento-de-ordem-digital` |
+| Pagar quantia, impugnação | `cumprimento-pagar-quantia-digital` |
+| Revisão final de qualquer entrega | `revisao-final-digital` |
 
-Fronteiras (consumo, fraude financeira, tipificação penal, LGPD de compliance, autoral, eleitoral, infância digital, cliente-plataforma, nome de domínio `.br`/SACI-Adm ⇒ `FORA DO RECORTE`) são decididas pela triagem **antes** de qualquer peça; nesses casos a saída é roteamento com destino citado e **nenhuma** petição.
+**Donos de sobreposição:** tutela antecedente — a tutela redige, a inicial incorpora; produção antecipada — a preservação decide, a skill própria redige; registros autônomos — a frente produz o BLOCO MATERIAL, a fase embrulha; ato da ANPD ou da Anatel em juízo — só o controle judicial; incidente — LGPD consultiva até a comunicação, depois a ANPD regulado.
 
-## 4. Regime de plataformas — trava desta versão
+**Recurso** (porta `/digital-contencioso-recurso`): despachar pela decisão recorrida que estiver no caso; sem a decisão, só a pergunta. **Administrativo** (porta `/digital-contencioso-administrativo`): despachar pela autoridade e pela posição; ANPD sem fase no pedido nem em documento ⇒ só a pergunta de fase.
 
-A skill `regime-plataformas-e-conteudo` **não existe nesta versão**: a tese do Tema 987 após os embargos só foi capturada em fragmento primário truncado pelo próprio portal do STF (`context/stf-tema-987-andamento-fragmento.md`, [T987-ED-CORTE]) e o Tema 533 está com embargos a proclamar (`context/stf-tema-533-andamento.md`, [T533-ED-SUSPENSO]). Portanto:
+**Fronteiras de matéria** (seção própria do mapa metodológico) são decididas pela triagem antes de qualquer peça: a parte roteada sai com destino citado e sem petição; autoridade ou norma sem fonte vira linha `PENDENTE DE FONTE` e as demais seguem.
 
-- toda conclusão sobre **se** e **como** a plataforma responde = `PENDENTE DE FONTE` (motivos B1/B2);
-- é proibido completar a tese de memória, de notícia, de cópia de outro órgão ou derivá-la do art. 19 isolado (`context/marco-civil-lei-12965.md`, [MCI-18-19], é texto de lei, não o regime vigente);
-- o fragmento primário só pode aparecer com o rótulo **"parcial, não regime definitivo"**;
-- o pedido continua possível como **roteiro de pedido, prova e tutela** sobre normas primárias (Marco Civil, CPC, Código Civil), deixando a responsabilização em aberto.
+## 4. Proibições materiais
 
-## 5. Proibições materiais
+Não prometer recuperar conta, remover conteúdo, identificar autor, arquivamento, absolvição ou procedência. Nunca dois polos do mesmo conflito na mesma resposta; tese contrária só como "tese adversa a enfrentar". No `REGULADO`, não afirmar infração nem sanção que o documento não traga. Não afirmar autenticidade de print; IP identifica terminal, não pessoa; hash declarado ≠ verificado. Não presumir termos da plataforma nem ato externo sem documento. Não enviar dado do cliente a serviço externo; nunca prometer sigilo.
 
-Não prometer recuperar conta, remover conteúdo, identificar autor ou resultado na plataforma ou em juízo. Não afirmar autenticidade de print; não tratar IP como autor nem hash como autenticidade. Não presumir termos da plataforma. Não declarar ato externo praticado (notificação enviada, pedido protocolado, ordem cumprida) sem documento. Não enviar dado do cliente a serviço externo por conta própria e **nunca prometer sigilo nem que o dado não sai da máquina**: o conteúdo informado é processado pelo modelo do ambiente e pode sair dela; pasta privada não é cofre certificado.
+Premissa normativa do pedido (dever, prazo, alcance de precedente) é conferida contra o bloco de `context/`; contradita, corrigir pelo texto capturado; não corrigível, a `revisao-final-digital` fixa `BLOQUEADO` só nesse item, com o motivo, e a via correta segue.
 
-Premissa normativa embutida no pedido (quem tem o dever, prazo, o que o precedente diz) é conferida contra o bloco de `context/` **antes** de ser aceita: se o sujeito, o prazo ou o alcance divergem do texto capturado, corrigir pelo texto e rejeitar a premissa; nunca classificá-la como "sustentável", e nenhum juízo de sustentação sai sem os controles executados (sem eles, só texto capturado e divergência apontada). Premissa que o texto contradiz ("o art. 42 é competência judicial"; "a ANPD restabelece a conta") ⇒ **só esse item** `BLOQUEADO` com o motivo, nunca `PENDENTE DE FONTE`; a via correta e o recurso factual (ex.: apelação interna da plataforma, `PENDENTE DE PROVA`) seguem. Pedido único que é premissa contradita, sem pedido lícito restante identificado ⇒ estado final `BLOQUEADO` com o motivo; sem trecho substituto, "requer-se" nem modelo em branco. Denúncia à ANPD sem fato certo ou prova da infração ⇒ item `PENDENTE DE PROVA`; não herda o prazo nem a prematuridade da petição de titular e não vira petição por definição.
+## 5. Fechamento (uma vez, aqui e na revisão final)
 
-## 6. Saída obrigatória do master
+Saída só de perguntas (portão): só as perguntas, sem linha POLO, sem `A CONFIRMAR` e sem a tabela da revisão.
 
-1. Cronologia única (tabela).
-2. Rota escolhida e skills executadas (nome real).
-3. Produto da produtora (minuta, tabela, notificação ou pendências).
-4. **Revisão aplicada** (`templates/revisao-aplicada.md`): os três agentes de controle por versão, livro de achados e, se faltar retorno, "revisão não executada".
-5. Pendências com responsável e próxima providência.
-6. **Por último, o bloco `REVISÃO APLICADA · VERSÃO N`** (formato do §7 do template), com estado **por item**: `MINUTA PARA REVISÃO HUMANA` (só com a cadeia completa na versão final, sem FAIL nem achado aberto) · `PENDENTE DE PROVA` · `PENDENTE DE FONTE` · `BLOQUEADO` · `FORA DO RECORTE`. O gate do plugin emite a entrega ou uma `PENDENCIA`; o modelo não grava `entrega-verificada/`.
+1. Linha única, fora de literais: `POLO DO CLIENTE · NATUREZA <N1…N7> · POSIÇÃO <ATIVO|PASSIVO|REGULADO|TERCEIRO> · FASE <fiscalizado|investigado|autuado|sancionado|não se aplica>`, coerente com a triagem.
+2. Cronologia única (tabela) e "Andamento" atualizado.
+3. Rota escolhida e skills executadas (nome real).
+4. Ato produzido, sempre gravado na pasta do caso com o perfil, além do resumo. Arquivo citado só pelo nome relativo ao caso (ex.: `00-perfil-do-caso.md`), nunca caminho interno ou de máquina.
+5. Tabela inteira da `revisao-final-digital`: crivo item a item (uma linha por item, OK ou BLOQUEAR), R1–R4 e estado por item.
+6. Pendências com responsável e próxima providência.
 
-Normas e temas: somente `context/` (ver `context/INDICE.md`), citando o ID do bloco. Súmula, tema ou precedente sem texto capturado: número e 🟡, nunca tese.
+Estado por item, literal, um só, dentre os cinco da `revisao-final-digital` §8. Dado faltante ⇒ `PENDENTE DE PROVA` com o campo nomeado (ex.: `[DATA — PENDENTE DE PROVA]`); pendente sem complemento, OK, "não feita" ou "encaminhado" não são estado; o que não é entrega vai às pendências.
 
-
-Transporte próprio no CLI: o hook PreToolUse de Agent conserva o prompt original e acrescenta retornos públicos completos da mesma versão antes do validador e da suprema. Sem sessão/turno, conclusão foreground, ordem ou correspondência dos itens, a chamada própria é recusada. Isso não substitui a obrigação de copiar integralmente os retornos nem fecha achados. O Stop e `verificar` conferem o input efetivo registrado pelo runtime; ausência dessa prova após transformação impede reconhecer entrega. A sonda técnica de transporte não é positivo real de mérito nem prova Cowork.
+Resumo, abertura e rota seguem a regra da minuta: norma e tema só de `context/` (`context/INDICE.md`) com o ID na linha; Tema 987 ou 533 com `[ID]` e o rótulo literal ("fonte parcial — embargos julgados em 17/06/2026, acórdão não publicado"; 533: "fonte parcial — mérito publicado; embargos suspensos para posterior proclamação, sem resultado proclamado"); o resumo não afirma regime que o corpo deixa aberto. Súmula ou precedente sem texto capturado: número e 🟡, nunca tese. A decisão final é do advogado.

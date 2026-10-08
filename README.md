@@ -1,13 +1,14 @@
-# Digital — Contencioso e Administrativo
+# Digital — Contencioso, Administrativo e LGPD
 
-**Candidato para homologação. Não liberado para venda.** Plugin único para apoio ao advogado da pessoa ou empresa afetada em controvérsias digitais, com 18 skills e 13 comandos. Escopo e limitações no [README do plugin](digital-contencioso-os/README.md).
+Marketplace do plugin **digital-contencioso-os** (versão 0.3.0), da Sbroggio Advocacia & IA Combativa. Apoio ao advogado de qualquer polo em caso digital, na fase administrativa (ANPD, Anatel, Ministério Público, domínio `.br`), na fase judicial completa e na LGPD consultiva. Escopo e limites no [README do plugin](digital-contencioso-os/README.md).
 
-## Instalação para conferência
+Produto vendido sob licença de uso: o código está em repositório público para viabilizar a instalação, mas não é software livre. Condições em [LICENCA](LICENCA).
 
-Após a publicação deste conteúdo: Claude Desktop → Personalização → Plugins → Adicionar plugin → Adicionar marketplace → Adicionar de um repositório. URL: https://github.com/sbroggioadv/digital-contencioso-os-marketplace. Sincronizar e localizar o Digital em Meus para instalar.
+## Instalação
 
-Instalar não exige executar o onboarding. Nesta homologação, não executar `/digital-contencioso-install`; usar somente uma pasta de testes sem documentos reais. A presença na lista comprova instalação, não execução dos controles nem revisão jurídica.
+- **Claude Desktop (Cowork):** Personalização → Plugins → Adicionar → Adicionar marketplace → Adicionar de um repositório → `https://github.com/sbroggioadv/digital-contencioso-os-marketplace` → Sincronizar; depois instale **digital-contencioso-os**.
+- **Claude Code:** `claude plugin marketplace add sbroggioadv/digital-contencioso-os-marketplace` e `claude plugin install digital-contencioso-os@digital-contencioso-os-marketplace`.
 
-Os hooks Stop e PreToolUse dependem de Python 3. A ausência do intérprete impede a emissão de entrega aprovada. A compatibilidade completa no Cowork permanece pendente.
+Depois de instalar, rode `/digital-contencioso-install` e conduza o caso por `/digital-contencioso-master`. Toda entrega é minuta para revisão do advogado.
 
-O diretório do plugin conserva sua LICENCA. O LICENSE na raiz reproduz o padrão de distribuição do marketplace; a liberação comercial e os entregáveis de venda continuam pendentes.
+Suporte: **luis@sbroggio.io**.

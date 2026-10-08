@@ -1,8 +1,8 @@
 {
   "name": "digital-contencioso-os",
-  "version": "0.1.0",
-  "description": "Digital — Contencioso e Administrativo. Apoio ao advogado da pessoa ou empresa afetada em conta, conteúdo, registros, dados pessoais e cumprimento de ordem no ambiente digital, com prova de origem, fonte capturada e revisão humana.",
+  "version": "0.3.0",
+  "description": "Digital — Contencioso, Administrativo e LGPD. Apoio ao advogado de qualquer polo em caso digital (pessoa ou empresa afetada, plataforma, provedor, controlador ou operador, autor do conteúdo), da triagem ao cumprimento: fase administrativa (ANPD, Anatel, Ministério Público, domínio .br) e fase judicial completa (inicial, tutela, contestação, réplica, recursos, cumprimento), em conta, conteúdo, registros, dados pessoais e termos de plataforma, mais LGPD consultiva (adequação, políticas, RIPD, encarregado, contratos, incidente). Minutas com fonte capturada e revisão do advogado.",
   "author": {
-    "name": "IA Combativa"
+    "name": "Sbroggio Advocacia & IA Combativa"
   }
 }
